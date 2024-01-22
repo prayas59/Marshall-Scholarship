@@ -37,7 +37,7 @@ const FormBoldForm = () => {
               type="tel"
               className="w-full rounded border border-stroke bg-white px-5 py-3 text-base text-black outline-none focus:border-primary"
               name="phone_input_CE3F3928-A99D-4D88-BF0C-E729285DB836"
-              placeholder="WhatsApp Phone Number"
+              placeholder="+44 20 7123 4567"
               required=""
               value=""
             />
