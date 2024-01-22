@@ -1,6 +1,5 @@
 import React from "react";
 import "./Courses.css";
-import { Card } from "react-bootstrap";
 import ArtCourseImg from "../../utils/images/art-course.jpg";
 import BusinessCourseImg from "../../utils/images/business-course.jpg";
 import ComputerScienceCourseImg from "../../utils/images/computer-science-course.jpg";
