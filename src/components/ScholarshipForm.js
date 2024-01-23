@@ -74,22 +74,6 @@ const FormBoldForm = () => {
             />
           </div>
         </form>
-        <p className="mt-8 flex items-center justify-center">
-          Powered by
-          <span className="pl-2">
-            <a
-              href="https://formbold.com"
-              rel="nofollow noopener"
-              target="_blank"
-            >
-              <img
-                src="https://cdn.formbold.com/formbold-logo.svg"
-                alt="Formbold Logo"
-                style={{ maxWidth: "100px" }}
-              />
-            </a>
-          </span>
-        </p>
       </div>
     </div>
   );
