@@ -1,4 +1,3 @@
-// components/FormBoldForm.js
 import React from "react";
 
 const FormBoldForm = () => {
@@ -6,14 +5,13 @@ const FormBoldForm = () => {
     <div className="text-black">
       <link rel="stylesheet" href="https://cdn.formbold.com/formbold.css" />
       <br />
-
       <div className="formbold-builder-form themeOne">
         <form
-          encType="multipart/form-data"
-          action="https://formbold.com/s/6lq7n"
           method="POST"
+          action="https://formbold.com/s/6lq7n"
           className="mx-auto w-full max-w-[570px] rounded-[10px] border border-stroke bg-white p-10 themeOne"
         >
+          {/* Convert HTML input fields to React equivalents */}
           <div className="mb-4">
             <label className="mb-2.5 block text-base text-black">
               <span>Name</span>
@@ -24,8 +22,7 @@ const FormBoldForm = () => {
               className="w-full rounded border border-stroke bg-white px-5 py-3 text-base text-black outline-none focus:border-primary"
               name="text_input_C61942F8-B0AB-4D9D-B691-8BCE3E62DF9E"
               placeholder="John Roy"
-              required=""
-              value=""
+              required
             />
           </div>
           <div className="mb-4">
@@ -35,11 +32,10 @@ const FormBoldForm = () => {
             </label>
             <input
               type="tel"
+              name="phone"
               className="w-full rounded border border-stroke bg-white px-5 py-3 text-base text-black outline-none focus:border-primary"
-              name="phone_input_CE3F3928-A99D-4D88-BF0C-E729285DB836"
               placeholder="+44 20 7123 4567"
-              required=""
-              value=""
+              required
             />
           </div>
           <div className="mb-4">
@@ -49,11 +45,10 @@ const FormBoldForm = () => {
             </label>
             <input
               type="email"
+              name="email"
               className="w-full rounded border border-stroke bg-white px-5 py-3 text-base text-black outline-none focus:border-primary"
-              name="email_input_6616E84A-2371-42AD-8924-1B9377253F2B"
               placeholder="Enter Email Address"
-              required=""
-              value=""
+              required
             />
           </div>
           <div className="mb-4">
@@ -63,13 +58,14 @@ const FormBoldForm = () => {
             </label>
             <input
               type="text"
+              name="university"
               className="w-full rounded border border-stroke bg-white px-5 py-3 text-base text-black outline-none focus:border-primary"
-              name="text_input_D4B648E0-514D-453B-A233-18DD740713FD"
               placeholder="University Name"
-              required=""
-              value=""
+              required
             />
           </div>
+          {/* ... other input fields ... */}
+
           <div className="btn-toolbar flex items-center space-x-3">
             <input
               type="submit"
@@ -78,6 +74,22 @@ const FormBoldForm = () => {
             />
           </div>
         </form>
+        <p className="mt-8 flex items-center justify-center">
+          Powered by
+          <span className="pl-2">
+            <a
+              href="https://formbold.com"
+              rel="nofollow noopener"
+              target="_blank"
+            >
+              <img
+                src="https://cdn.formbold.com/formbold-logo.svg"
+                alt="Formbold Logo"
+                style={{ maxWidth: "100px" }}
+              />
+            </a>
+          </span>
+        </p>
       </div>
     </div>
   );
