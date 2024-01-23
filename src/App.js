@@ -64,7 +64,7 @@ function App() {
                       <li className="text-uppercase fw-semibold">Home</li>
                     </Link>
                     <Link
-                      to="/courses"
+                      to="/scholarships"
                       className="text-decoration-none text-danger"
                     >
                       <li className="text-uppercase fw-semibold">
