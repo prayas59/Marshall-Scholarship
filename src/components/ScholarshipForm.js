@@ -1,39 +1,39 @@
-import React, { useState, useEffect } from "react";
-import Select from "react-select";
+import React from "react";
+// import Select from "react-select";
 import "tailwindcss/tailwind.css"; // Import Tailwind CSS
 
 const FormComponent = () => {
-  const [universities, setUniversities] = useState([]);
-  const [error, setError] = useState(null);
-  const [selectedUniversity, setSelectedUniversity] = useState(null);
+  // const [universities, setUniversities] = useState([]);
+  // const [error, setError] = useState(null);
+  // const [selectedUniversity, setSelectedUniversity] = useState(null);
 
-  useEffect(() => {
-    // Fetch universities data from API
-    fetch("https://universities.hipolabs.com/search?country=United+Kingdom")
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Failed to fetch universities");
-        }
-        return response.json();
-      })
-      .then((data) => {
-        const universityOptions = data.map((university) => ({
-          label: university.name,
-          value: university.name,
-        }));
-        setUniversities(universityOptions);
-      })
-      .catch((error) => {
-        setError(error.message);
-        console.error("Error fetching universities:", error);
-      });
-  }, []);
+  // useEffect(() => {
+  //   // Fetch universities data from API
+  //   fetch("https://universities.hipolabs.com/search?country=United+Kingdom")
+  //     .then((response) => {
+  //       if (!response.ok) {
+  //         throw new Error("Failed to fetch universities");
+  //       }
+  //       return response.json();
+  //     })
+  //     .then((data) => {
+  //       const universityOptions = data.map((university) => ({
+  //         label: university.name,
+  //         value: university.name,
+  //       }));
+  //       setUniversities(universityOptions);
+  //     })
+  //     .catch((error) => {
+  //       setError(error.message);
+  //       console.error("Error fetching universities:", error);
+  //     });
+  // }, []);
 
   return (
     <div className="min-h-screen flex justify-center items-center">
       <div className="max-w-md w-full p-6 bg-white rounded-lg shadow-xl">
         <h2 className="text-2xl mb-4 text-center font-bold">Submit Form</h2>
-        {error && <div className="text-red-500">{error}</div>}
+        {/* {error && <div className="text-red-500">{error}</div>} */}
         <form name="contact" method="POST" netlify>
           <p>
             <label>
