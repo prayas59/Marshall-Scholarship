@@ -5,9 +5,10 @@ import "tailwindcss/tailwind.css"; // Import Tailwind CSS
 const FormComponent = () => {
   const [universities, setUniversities] = useState([]);
   const [selectedUniversity, setSelectedUniversity] = useState(null);
+
   useEffect(() => {
-    // Fetch universities data from Netlify Function
-    fetch("../../functions/fetchUniversities")
+    // Fetch universities data from API
+    fetch("http://universities.hipolabs.com/search?country=United+Kingdom")
       .then((response) => {
         if (!response.ok) {
           throw new Error("Failed to fetch universities");
@@ -15,7 +16,11 @@ const FormComponent = () => {
         return response.json();
       })
       .then((data) => {
-        setUniversities(data);
+        const universityOptions = data.map((university) => ({
+          label: university.name,
+          value: university.name,
+        }));
+        setUniversities(universityOptions);
       })
       .catch((error) => {
         console.error("Error fetching universities:", error);
