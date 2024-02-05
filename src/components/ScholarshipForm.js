@@ -7,7 +7,7 @@ const FormComponent = () => {
   const [selectedUniversity, setSelectedUniversity] = useState(null);
   useEffect(() => {
     // Fetch universities data from Netlify Function
-    fetch("/.netlify/functions/fetchUniversities")
+    fetch("../../functions/fetchUniversities")
       .then((response) => {
         if (!response.ok) {
           throw new Error("Failed to fetch universities");
