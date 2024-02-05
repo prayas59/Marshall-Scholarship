@@ -7,7 +7,7 @@ exports.handler = async (event, context) => {
       "http://universities.hipolabs.com/search?country=United+Kingdom"
     );
     const data = await response.json();
-    console.log("ssss");
+    console.log("ssss", data);
 
     return {
       statusCode: 200,
