@@ -11,7 +11,7 @@ import Courses from "./pages/Scholarships/Courses";
 function App() {
   return (
     <div>
-      <Navbar expand="lg" className="position-absolute w-100">
+      <Navbar expand="lg" className="position-absolute w-100 navbar-custom">
         <Container>
           <Navbar.Brand>
             <Link to="/" className="navbar-brand d-flex align-items-center">
@@ -33,11 +33,14 @@ function App() {
             className="bg-light"
           />
           <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="me-auto justify-content-end w-100">
-              <Link to="/" className="nav-link text-uppercase">
+            <Nav className="ms-auto">
+              <Link to="/" className="nav-link btn btn-primary btn-lg me-2">
                 Home
               </Link>
-              <Link to="/scholarships" className="nav-link text-uppercase">
+              <Link
+                to="/scholarships"
+                className="nav-link btn btn-primary btn-lg"
+              >
                 Our Scholarships
               </Link>
             </Nav>
@@ -51,33 +54,38 @@ function App() {
       </Routes>
 
       <footer className="bg-body-tertiary">
-        <div className="bg-body-tertiary container my-5">
-          <div className=" bg-body-tertiary row d-flex justify-content-between align-items-center">
-            <div className="col-md-7 col-lg-6">
-              <div className="d-row d-md-flex justify-content-between align-items-center">
-                <div className="col-12 col-md-6 col-lg-5 mb-5 mt-4 my-md-0">
-                  <ul className="footer-navigation items-center list-unstyled mb-0">
-                    <Link to="/" className="text-decoration-none text-danger">
-                      <li className="text-uppercase fw-semibold">Home</li>
-                    </Link>
-                    <Link
-                      to="/scholarships"
-                      className="text-decoration-none text-danger"
-                    >
-                      <li className="text-uppercase fw-semibold">
+        <div className="container py-5">
+          <div className="row justify-content-between align-items-center">
+            <div className="col-md-6">
+              <div className="row">
+                <div className="col-sm-6 mb-4 mb-sm-0">
+                  <h5 className="text-uppercase text-danger mb-3 visually-hidden">
+                    Navigation
+                  </h5>
+                  <ul className="footer-navigation list-unstyled d-flex flex-wrap">
+                    <li className="me-3">
+                      <Link to="/" className="text-decoration-none text-dark">
+                        Home
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        to="/scholarships"
+                        className="text-decoration-none text-dark"
+                      >
                         Our Scholarships
-                      </li>
-                    </Link>
+                      </Link>
+                    </li>
                   </ul>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div className="bg-body-tertiary">
+        <div className="bg-body-secondary py-3">
           <div className="container">
-            <p className="p-3 m-0 text-center">
-              copyright 2024 @ made by Marshall
+            <p className="m-0 text-center text-muted">
+              &copy; 2024 Made by Marshall
             </p>
           </div>
         </div>
