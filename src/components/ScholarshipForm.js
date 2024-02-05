@@ -149,6 +149,7 @@ const FormComponent = () => {
                 onChange={handleCountryChange}
                 value={{ label: selectedCountry, value: selectedCountry }}
                 placeholder="Select Country"
+                required
               />
             </div>
           </div>
@@ -170,6 +171,7 @@ const FormComponent = () => {
                 onChange={setSelectedUniversity}
                 value={selectedUniversity}
                 placeholder="Select University"
+                required
               />
             </div>
           </div>
