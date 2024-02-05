@@ -51,7 +51,7 @@ const FormComponent = () => {
           {(
             { isSubmitting, setFieldValue, values } // Destructure setFieldValue and values from Formik context
           ) => (
-            <Form className="space-y-6" netlify>
+            <Form className="space-y-6" name="contact" netlify>
               <div>
                 <label htmlFor="firstName" className="block text-gray-700">
                   First Name:
