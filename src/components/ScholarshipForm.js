@@ -34,7 +34,7 @@ const FormComponent = () => {
       <div className="max-w-md w-full p-6 bg-white rounded-lg shadow-xl">
         <h2 className="text-2xl mb-4 text-center font-bold">Submit Form</h2>
         {/* {error && <div className="text-red-500">{error}</div>} */}
-        <form name="contact" method="POST" netlify>
+        <form name="contact" method="POST" data-netlify="true">
           <p>
             <label>
               Your Name: <input type="text" name="name" />
