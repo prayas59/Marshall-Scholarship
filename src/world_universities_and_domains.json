@@ -79830,6 +79830,30 @@
     "country": "Canada"
   },
   {
+    "web_pages": ["https://cambriancollege.ca/"],
+    "name": "Canadore College",
+    "alpha_two_code": "CA",
+    "state-province": null,
+    "domains": ["cambriancollege.ca"],
+    "country": "Canada"
+  },
+  {
+    "web_pages": ["https://cambriancollege.ca/"],
+    "name": "Rotman School of Management",
+    "alpha_two_code": "CA",
+    "state-province": null,
+    "domains": ["cambriancollege.ca"],
+    "country": "Canada"
+  },
+  {
+    "web_pages": ["https://cambriancollege.ca/"],
+    "name": "Desautels Faculty of Management",
+    "alpha_two_code": "CA",
+    "state-province": null,
+    "domains": ["cambriancollege.ca"],
+    "country": "Canada"
+  },
+  {
     "web_pages": ["https://dsdt.edu/"],
     "name": "Detroit School of Technology",
     "alpha_two_code": "US",
