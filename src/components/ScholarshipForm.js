@@ -1,33 +1,32 @@
 import React, { useState, useEffect } from "react";
 import Select from "react-select";
 import "tailwindcss/tailwind.css"; // Import Tailwind CSS
+import universitiesData from "../world_universities_and_domains.json"; // Import JSON data
 
 const FormComponent = () => {
   const [universities, setUniversities] = useState([]);
-  const [selectedUniversity, setSelectedUniversity] = useState(null);
+  const [selectedUniversity, setSelectedUniversity] =
+    useState("Select University");
+  const [selectedCountry, setSelectedCountry] = useState("Select Country");
 
   useEffect(() => {
-    // Fetch universities data from API with HTTP endpoint
-    fetch("http://universities.hipolabs.com/search?country=United+Kingdom")
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Failed to fetch universities");
-        }
-        return response.json();
-      })
-      .then((data) => {
-        const universityOptions = data.map((university) => ({
-          label: university.name,
-          value: university.name,
-        }));
-        setUniversities(universityOptions);
-      })
-      .catch((error) => {
-        // setError(error.message);
-        console.error("Error fetching universities:", error);
-      });
-  }, []);
+    if (selectedCountry) {
+      // Filter universities based on the selected country
+      const filteredUniversities = universitiesData.filter(
+        (university) => university.country === selectedCountry
+      );
+      // Extract university names from the filtered list
+      const universityNames = filteredUniversities.map(
+        (university) => university.name
+      );
+      // Set the filtered university names
+      setUniversities(universityNames);
+    }
+  }, [selectedCountry]);
 
+  const handleCountryChange = (selectedOption) => {
+    setSelectedCountry(selectedOption.value);
+  };
   return (
     <div>
       <div class="max-w-lg mx-auto mt-6 p-6 bg-red-500 rounded-lg shadow-lg">
@@ -134,18 +133,42 @@ const FormComponent = () => {
           <div className="SortableItem fb-builder-item">
             <div className="">
               <label
+                htmlFor="country"
+                className="mb-2.5 block text-base text-black"
+              >
+                <span>Country</span>
+                <span className="label-required pl-1 text-red-400">*</span>
+              </label>
+              <Select
+                options={universitiesData.map((university) => ({
+                  label: university.country,
+                  value: university.country,
+                }))}
+                className="w-full rounded border border-stroke bg-white px-5 py-3 text-base text-black outline-none focus:border-primary"
+                onChange={handleCountryChange}
+                value={{ label: selectedCountry, value: selectedCountry }}
+                placeholder="Select Country"
+              />
+            </div>
+          </div>
+          <div className="SortableItem fb-builder-item">
+            <div className="">
+              <label
                 htmlFor="university"
                 className="mb-2.5 block text-base text-black"
               >
                 <span>University</span>
-                <span class="label-required pl-1 text-red-400">*</span>
+                <span className="label-required pl-1 text-red-400">*</span>
               </label>
               <Select
-                options={universities}
-                name="univ"
+                options={universities.map((university) => ({
+                  label: university,
+                  value: university,
+                }))}
                 className="w-full rounded border border-stroke bg-white px-5 py-3 text-base text-black outline-none focus:border-primary"
                 onChange={setSelectedUniversity}
                 value={selectedUniversity}
+                placeholder="Select University"
               />
             </div>
           </div>
