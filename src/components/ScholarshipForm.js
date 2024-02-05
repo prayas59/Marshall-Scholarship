@@ -42,7 +42,8 @@ const FormComponent = () => {
           encType="multipart/form-data"
           method="POST"
           className="mx-auto p-2 w-full max-w-[570px] rounded-[10px] border border-stroke bg-white div-10 themeOne"
-          action="https://formbold.com/s/6lq7n"
+          // action="https://formbold.com/s/6lq7n"
+          netlify
         >
           <div className="SortableItem fb-builder-item">
             <div className="">
