@@ -89,10 +89,10 @@ const FormComponent = () => {
                 <span>Phone Number:</span>
                 <span className="label-required pl-1 text-red-400">*</span>
               </label>
-              <div className="flex">
+              <div className="flex flex-wrap">
                 <select
                   name="countryCode"
-                  className="rounded-l border border-stroke bg-white px-5 py-3 text-base text-black outline-none focus:border-primary"
+                  className="rounded-l border border-stroke bg-white px-5 py-3 text-base text-black outline-none focus:border-primary mb-2 md:mb-0 md:mr-2"
                 >
                   {/* Add your country codes here */}
                   <option value="+1">+1</option>
@@ -106,13 +106,14 @@ const FormComponent = () => {
                 <input
                   type="text"
                   name="phoneNumber"
-                  className="flex-1 rounded-r border border-stroke bg-white px-5 py-3 text-base text-black outline-none focus:border-primary"
+                  className="flex-1 rounded border border-stroke bg-white px-5 py-3 text-base text-black outline-none focus:border-primary"
                   placeholder="20 7123 4567"
                   required
                 />
               </div>
             </div>
           </div>
+
           <div className="SortableItem fb-builder-item">
             <div className="">
               <label
