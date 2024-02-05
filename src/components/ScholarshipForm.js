@@ -8,7 +8,7 @@ const FormComponent = () => {
 
   useEffect(() => {
     // Fetch universities data from API
-    fetch("http://universities.hipolabs.com/search?country=United+Kingdom")
+    fetch("/.netlify/functions/proxy")
       .then((response) => {
         if (!response.ok) {
           throw new Error("Failed to fetch universities");
