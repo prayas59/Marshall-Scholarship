@@ -35,7 +35,12 @@ const FormComponent = () => {
         <h2 className="text-2xl mb-4 text-center font-bold">Submit Form</h2>
         {error && <div className="text-red-500">{error}</div>}
 
-        <form name="contact" method="POST" data-netlify="true">
+        <form
+          name="contact"
+          method="POST"
+          data-netlify="true"
+          onSubmit="submit"
+        >
           <p>
             <label htmlFor="firstName" className="block text-gray-700">
               First Name:
