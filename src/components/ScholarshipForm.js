@@ -34,14 +34,44 @@ const FormComponent = () => {
       <div className="max-w-md w-full p-6 bg-white rounded-lg shadow-xl">
         <h2 className="text-2xl mb-4 text-center font-bold">Submit Form</h2>
         {error && <div className="text-red-500">{error}</div>}
+        <form name="contact" method="POST" netlify>
+          <p>
+            <label>
+              Your Name: <input type="text" name="name" />
+            </label>
+          </p>
+          <p>
+            <label>
+              Your Email: <input type="email" name="email" />
+            </label>
+          </p>
+          <p>
+            <label>
+              Your Role:{" "}
+              <select name="role[]" multiple>
+                <option value="leader">Leader</option>
+                <option value="follower">Follower</option>
+              </select>
+            </label>
+          </p>
+          <p>
+            <label>
+              Message: <textarea name="message"></textarea>
+            </label>
+          </p>
+          <p>
+            <button type="submit">Send</button>
+          </p>
+        </form>
 
+        {/* 
         <form
           action="post"
           className="space-y-6"
           name="contact"
           data-netlify="true"
         >
-          <div>
+          <p>
             <label htmlFor="firstName" className="block text-gray-700">
               First Name:
             </label>
@@ -52,8 +82,8 @@ const FormComponent = () => {
               placeholder="John"
               required
             />
-          </div>
-          <div>
+          </p>
+          <p>
             <label htmlFor="lastName" className="block text-gray-700">
               Last Name:
             </label>
@@ -64,8 +94,8 @@ const FormComponent = () => {
               placeholder="Roy"
               required
             />
-          </div>
-          <div>
+          </p>
+          <p>
             <label htmlFor="phoneNumber" className="block text-gray-700">
               Phone Number:
             </label>
@@ -76,8 +106,8 @@ const FormComponent = () => {
               placeholder="+44 20 7123 4567"
               required
             />
-          </div>
-          <div>
+          </p>
+          <p>
             <label htmlFor="email" className="block text-gray-700">
               Email:
             </label>
@@ -88,8 +118,8 @@ const FormComponent = () => {
               placeholder="johnroy@gmail.com"
               required
             />
-          </div>
-          <div>
+          </p>
+          <p>
             <label htmlFor="university" className="block text-gray-700">
               University:
             </label>
@@ -99,14 +129,14 @@ const FormComponent = () => {
               onChange={setSelectedUniversity}
               value={selectedUniversity}
             />
-          </div>
+          </p>
           <button
             type="submit"
             className="bg-blue-500 hover:bg-blue-700 text-black font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline w-full"
           >
             Submit
           </button>
-        </form>
+        </form> */}
       </div>
     </div>
   );
