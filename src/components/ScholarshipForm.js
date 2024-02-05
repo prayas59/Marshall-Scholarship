@@ -9,7 +9,7 @@ const FormComponent = () => {
 
   useEffect(() => {
     // Fetch universities data from API
-    fetch("http://universities.hipolabs.com/search?country=United+Kingdom")
+    fetch("https://universities.hipolabs.com/search?country=United+Kingdom")
       .then((response) => {
         if (!response.ok) {
           throw new Error("Failed to fetch universities");
