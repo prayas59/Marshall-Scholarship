@@ -43,7 +43,7 @@ const FormComponent = () => {
           method="POST"
           className="mx-auto p-2 w-full max-w-[570px] rounded-[10px] border border-stroke bg-white div-10 themeOne"
           // action="https://formbold.com/s/6lq7n"
-          action="https://forms.mk/jNzz4d"
+          action="https://nocodeform.io/f/65c153c79ab501696dc47d48"
           // netlify
         >
           <div className="SortableItem fb-builder-item">
