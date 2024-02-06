@@ -164,14 +164,17 @@ const FormComponent = () => {
                 <span>University</span>
                 <span className="label-required pl-1 text-red-400">*</span>
               </label>
+
               <Select
                 options={universities.map((university) => ({
                   label: university,
                   value: university,
                 }))}
                 className="w-full rounded border border-stroke bg-white px-5 py-3 text-base text-black outline-none focus:border-primary"
-                onChange={setSelectedUniversity}
-                value={selectedUniversity}
+                onChange={(selectedOption) =>
+                  setSelectedUniversity(selectedOption.value)
+                }
+                value={{ label: selectedUniversity, value: selectedUniversity }}
                 placeholder="Select University"
                 required
               />
