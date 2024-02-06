@@ -23,6 +23,41 @@ const FormComponent = () => {
       setUniversities(universityNames);
     }
   }, [selectedCountry]);
+  const handleSubmit = (event) => {
+    event.preventDefault(); // Prevent default form submission
+    // Construct form data
+    if (
+      selectedCountry === "Select Country" ||
+      selectedUniversity === "Select University"
+    ) {
+      // Log an error or display a message to the user
+      alert("Please select a valid country and university.");
+      return;
+    }
+
+    const formData = new FormData(event.target);
+    formData.append("university", selectedUniversity);
+    formData.append("country", selectedCountry);
+    fetch(event.target.action, {
+      method: "POST",
+      body: formData,
+    })
+      .then((response) => {
+        // Handle response from backend
+        console.log("Form submission response:", response);
+        // Show dialog upon successful submission
+        alert("Form submitted successfully!");
+
+        // Redirect to homepage after 5 seconds
+        setTimeout(() => {
+          window.location.href = "/"; // Replace with your homepage URL
+        }, 3000);
+      })
+      .catch((error) => {
+        console.error("Error submitting form data:", error);
+        // Handle error
+      });
+  };
 
   const handleCountryChange = (selectedOption) => {
     setSelectedCountry(selectedOption.value);
@@ -43,6 +78,7 @@ const FormComponent = () => {
           method="POST"
           className="mx-auto p-2 w-full max-w-[570px] rounded-[10px] border border-stroke bg-white div-10 themeOne"
           // action="https://formbold.com/s/6lq7n"
+          onSubmit={handleSubmit}
           action="https://nocodeform.io/f/65c153c79ab501696dc47d48"
           // netlify
         >
@@ -126,7 +162,7 @@ const FormComponent = () => {
                 <span class=" text-red-400">&#40;Optional&#41;</span>
               </label>
               <input
-                type="text"
+                type="email"
                 name="email"
                 className="w-full rounded border border-stroke bg-white px-5 py-3 text-base text-black outline-none focus:border-primary"
                 placeholder="johnroy@gmail.com"
